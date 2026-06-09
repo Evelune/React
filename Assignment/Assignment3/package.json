@@ -1,0 +1,18 @@
+{
+  "name": "assignment3",
+  "version": "1.0.0",
+  "description": "assigment",
+  "scripts": {
+    "test": "jest"
+  },
+  "author": "dewang",
+  "license": "ISC",
+  "devDependencies": {
+    "parcel": "^2.16.4"
+  },
+  "dependencies": {
+    "react": "^19.2.7",
+    "react-dom": "^19.2.7",
+    "reactdom": "^2.0.0"
+  }
+}

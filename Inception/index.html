@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>React First Start</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        background-color: black;
+        color: white;
+      }
+      body {
+        background-color: inherit;
+        color: inherit;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script
+      crossorigin
+      src="https://unpkg.com/react@18/umd/react.development.js"
+    ></script>
+    <script
+      crossorigin
+      src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"
+    ></script>
+  </body>
+  <script>
+    // ReactElement(object) => HTML ELEMENT
+    const heading = React.createElement(
+      "div",
+      { id: "divOne", className: "head" },
+      React.createElement("div", { id: "divTwo" }, [
+        React.createElement("h3", {}, "This is Heading Two"),
+        React.createElement("h3", {}, "This is Heading Two"),
+      ]),
+    );
+    const root = ReactDOM.createRoot(document.getElementById("root"));
+    root.render(heading);
+  </script>
+</html>
