@@ -1,0 +1,23 @@
+{
+  "name": "foodapp",
+  "version": "1.0.0",
+  "description": "food deliverying project app in react",
+  "scripts": {
+    "start" : "parcel index.html",
+    "build" : "parcel build index.html",
+    "test": "jest"
+  },
+  "keywords": [
+    "project",
+    "react"
+  ],
+  "author": "singhDewang",
+  "license": "ISC",
+  "devDependencies": {
+    "parcel": "^2.16.4"
+  },
+  "dependencies": {
+    "react": "^19.2.7",
+    "react-dom": "^19.2.7"
+  }
+}
