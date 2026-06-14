@@ -11,7 +11,7 @@ const AppLayout = () => {
     <div className="app">
       <HeaderComponent />
       <Banner />
-      <Body />
+      <Body/>
     </div>
   );
 };

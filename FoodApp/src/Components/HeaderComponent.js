@@ -1,6 +1,9 @@
+import { useState } from "react";
 import { LOGO } from "../utils/Constants";
 
 const HeaderComponent = () => {
+  const [btnState, setBtnState] = useState("Log In");
+
   return (
     <div className="header">
       <div className="logo">
@@ -17,11 +20,20 @@ const HeaderComponent = () => {
       <div className="cta">
         <ul>
           <li className="cart">Cart</li>
-          <li className="signUp">Sign up</li>
+          <li
+            className="signUp"
+            onClick={() => {
+              btnState === "Log In"
+                ? setBtnState("Log Out")
+                : setBtnState("Log In");
+            }}
+          >
+          {btnState}
+          </li>
         </ul>
       </div>
     </div>
   );
 };
 
-export default HeaderComponent
+export default HeaderComponent;

@@ -1,28 +1,25 @@
 import { CDN_URL } from "../utils/Constants";
 
 const Card = (props) => {
-    console.log("props " , props);    
+
     
   const { cardData } = props;
-      console.log("cardData" ,cardData);
+  const { id, name, cuisines, cloudinaryImageId, avgRating, sla, costForTwo } = cardData
 
-  const { name, cuisines, image, rating, delivery_time, cost_for_two } =
-    cardData;
 
   return (
     <div className="foodCard">
       <img
         className="foodImage"
-        src={ CDN_URL + image
-        }
+        src={ CDN_URL + cloudinaryImageId }
       ></img>
       <div className="foodInfo">
         <h3>{name}</h3>
         <p>{cuisines.join(", ")}</p>
         <ul>
-          <li>{rating+"⭐️"}</li>
-          <li>{delivery_time}</li>
-          <li>{cost_for_two}</li>
+          <li>{avgRating+"⭐️"}</li>
+          <li>{sla.deliveryTime+"min"}</li>
+          <li>{costForTwo}</li>
         </ul>
       </div>
     </div>
