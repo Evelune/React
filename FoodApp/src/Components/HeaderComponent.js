@@ -1,9 +1,15 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { LOGO } from "../utils/Constants";
+import { IoCartOutline } from "react-icons/io5";
+import { BiLogIn, BiLogOutCircle } from "react-icons/bi";
+
 
 const HeaderComponent = () => {
   const [btnState, setBtnState] = useState("Log In");
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
+  console.log("Header Rendered");
   
+
 
   return (
     <div className="header">
@@ -20,16 +26,14 @@ const HeaderComponent = () => {
       </div>
       <div className="cta">
         <ul>
-          <li className="cart">Cart</li>
-          <li
-            className="signUp"
-            onClick={() => {
-              btnState === "Log In"
-                ? setBtnState("Log Out")
-                : setBtnState("Log In");
-            }}
-          >
-          {btnState}
+          <li className="cart">
+            <IoCartOutline />
+            <p>Cart</p>
+          </li>
+          <li className="signUp" onClick={() => 
+            setIsLoggedIn(!isLoggedIn)}>
+            {isLoggedIn ? <BiLogOutCircle /> : <BiLogIn />}
+            <p>{isLoggedIn ? "Log Out" : "Log In"}</p>
           </li>
         </ul>
       </div>
