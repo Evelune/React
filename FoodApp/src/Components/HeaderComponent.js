@@ -3,6 +3,7 @@ import { LOGO } from "../utils/Constants";
 
 const HeaderComponent = () => {
   const [btnState, setBtnState] = useState("Log In");
+  
 
   return (
     <div className="header">

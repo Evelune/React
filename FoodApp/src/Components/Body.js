@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import Card from "./Card";
 // import reslist from "../utils/reslist";
 import ShimmerUI from "./ShimmerUI";
+import CounterButton from "./CounterButton";
 
 // let listOfRestaurants = reslist.data.cards.find(
 //   (c) => c?.card?.card?.id === "restaurant_grid_listing_v2",
@@ -11,6 +12,7 @@ import ShimmerUI from "./ShimmerUI";
 
 const Body = () => {
   const [items, setItems] = useState([]);
+  console.log("Body Rerendered")
 
   useEffect(() => {
     fetchData();
