@@ -10,9 +10,14 @@ import CounterButton from "./CounterButton";
 
 // console.log(listOfRestaurants);
 
-const Body = () => {
+const Body = ({ searchText }) => {
   const [items, setItems] = useState([]);
-  console.log("Body Rerendered")
+
+  const filteredRestaurants = items.filter((restaurant) =>
+    restaurant.info.name.toLowerCase().includes(searchText.toLowerCase()),
+  );
+
+  console.log("Body Rerendered");
 
   useEffect(() => {
     fetchData();
@@ -38,13 +43,17 @@ const Body = () => {
   //   return <ShimmerUI />
   // }
 
+  const isSearching = searchText.length > 0;
+
+  const displayList = isSearching ? filteredRestaurants.length : items.length;
+
   return items.length === 0 ? (
     <ShimmerUI />
   ) : (
     <div className="mainBody">
       <div className="main">
         <div className="resturant">
-          <p>{items.length} Resturant</p>
+          <p>{displayList} Resturant</p>
         </div>
 
         <div className="menuOption">
@@ -67,8 +76,8 @@ const Body = () => {
         </div>
       </div>
       <div className="foodCardContainer">
-        {items.map((resturant) => (
-          <Card key={resturant.info.id} cardData={resturant.info} />
+        {filteredRestaurants.map((restaurant) => (
+          <Card key={restaurant.info.id} cardData={restaurant.info} />
         ))}
       </div>
     </div>

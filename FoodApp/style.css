@@ -146,7 +146,6 @@ img {
 
 .mainBody {
   width: 100%;
-  height: 800px;
   padding-left: 64px;
   padding-right: 64px;
 }
@@ -200,6 +199,7 @@ img {
   display: flex;
   flex-wrap: wrap;
   gap: 30px;
+  padding-bottom: 60px;
 }
 
 .foodCard {
@@ -329,7 +329,7 @@ img {
   overflow: hidden;
 }
 
-.topHead:hover .buyItems {
+.foodCard:hover .buyItems {
   opacity: 1;
   visibility: visible;
   bottom: 20px;

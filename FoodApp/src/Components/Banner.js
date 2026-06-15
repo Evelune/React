@@ -1,9 +1,6 @@
 import { useState } from "react";
 
-const Banner = () => {
-
-  const [searchChange ,setSearchChange] = useState("h")
-  console.log(searchChange);
+const Banner = ({ searchText, setSearchText }) => {
 
   return (
     <div className="banner">
@@ -12,18 +9,18 @@ const Banner = () => {
           className="searchItems"
           type="text"
           placeholder="Search food...."
-          value={searchChange}
-          onChange={
-            (e)=>{
-              setSearchChange(e.target.value)
-            }
-          }
-
+          value={searchText}
+          onChange={(e) => {
+            setSearchText(e.target.value);
+          }}
         ></input>
-        <button className="submit" type="submit" 
-        onClick={()=>{
-          console.log(searchChange);
-        }}>
+        <button
+          className="submit"
+          type="submit"
+          onClick={() => {
+            console.log(searchText);
+          }}
+        >
           Search
         </button>
       </div>
@@ -36,4 +33,4 @@ const Banner = () => {
   );
 };
 
-export default Banner
+export default Banner;
