@@ -1,15 +1,16 @@
-import { useState } from "react";
-import banne1 from "../resource/food1.png";
-import banner2 from "../resource/food2.png";
-import banner3 from "../resource/food3.png";
-import banner4 from "../resource/food4.png";
-import banner5 from "../resource/food5.png";
+import { useEffect, useState } from "react";
+import { bannerImages } from "../resources/images";
 
 const Banner = ({ searchText, setSearchText }) => {
-  const images = [banne1, banner2, banner3, banner4, banner5];
-  console.log(images[0]);
-  
   const [currentImage, setCurrentImage] = useState(0);
+
+  useEffect(() => {
+    const intervalId = setInterval(() => {
+      setCurrentImage((prev) => (prev + 1) % bannerImages.length);
+    }, 3000);
+
+    return () => clearInterval(intervalId);
+  }, []);
 
   return (
     <div className="banner">
@@ -35,8 +36,7 @@ const Banner = ({ searchText, setSearchText }) => {
       </div>
       <img
         className="food"
-        // src="https://images.unsplash.com/photo-1544025162-d76694265947?q=80&w=2338&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-        src={images[currentImage]}
+        src={bannerImages[currentImage]}
         alt="foodItems"
       ></img>
     </div>

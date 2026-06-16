@@ -7,7 +7,7 @@
 body {
   width: 100%;
   height: 100%;
-  color: white;
+  color: black;
 }
 
 .header {
@@ -44,6 +44,8 @@ img {
   list-style: none;
   font-size: 16px;
   font-family: Arial, Helvetica, sans-serif;
+  border-bottom: 1px solid none;
+
 }
 
 .cta ul {
@@ -55,8 +57,14 @@ img {
   gap: 24px;
 }
 
+.navItems li {
+  height: 20px;
+  border-bottom: 1px solid none;
+  cursor: pointer;
+}
+
 .navItems li:hover {
-  height: fit-content;
+  height: 20px;
   border-bottom: 1px solid white;
   cursor: pointer;
 }
@@ -66,6 +74,7 @@ img {
   padding: 12px 20px 12px 20px;
   background-color: rgb(0, 0, 0);
   border-radius: 8px;
+  color: white;
 
   gap: 8px;
   display: flex;
@@ -115,11 +124,9 @@ img {
 .food {
   width: 100%;
   height: 100%;
-  border-radius: 0;
   background-position: center;
   background-repeat: no-repeat;
   object-fit: cover;
-  border-radius: 0px 0px 50px 50px;
 }
 
 .search {
@@ -136,6 +143,9 @@ img {
   gap: 24px;
 }
 
+
+
+
 .searchItems {
   width: 100%;
   height: 60px;
@@ -145,6 +155,8 @@ img {
   font-size: 20px;
   font-weight: 300;
 }
+
+
 .searchItems:active {
   border: none;
 }
@@ -384,6 +396,9 @@ img {
   font-size: 16px;
 }
 
+.heading{
+  color: black;
+}
 
 .addItemsPopUp{
     color: black;
@@ -474,4 +489,10 @@ img {
 
 input:focus{
   outline: none;
+}
+
+.headerComponent{
+  text-decoration: none;
+  color: white;
+
 }

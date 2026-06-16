@@ -18,10 +18,10 @@ const HeaderComponent = () => {
       </div>
       <div className="navItems">
         <ul>
-          <li>Home</li>
-          <li>Menu</li>
-          <li>About Us</li>
-          <li>Contact Us</li>
+          <li><a className="headerComponent" href="http://localhost:1234/">Home</a></li>
+          <li><a className="headerComponent" href="http://localhost:1234/menu">Menu</a></li>
+          <li><a className="headerComponent" href="http://localhost:1234/about">About Us</a></li>
+          <li><a className="headerComponent" href="http://localhost:1234/contact">Contact Us</a></li>
         </ul>
       </div>
       <div className="cta">
