@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { LOGO } from "../utils/Constants";
 import { IoCartOutline } from "react-icons/io5";
 import { BiLogIn, BiLogOutCircle } from "react-icons/bi";
+import { Link } from "react-router-dom";
 
 
 const HeaderComponent = () => {
@@ -18,10 +19,10 @@ const HeaderComponent = () => {
       </div>
       <div className="navItems">
         <ul>
-          <li><a className="headerComponent" href="http://localhost:1234/">Home</a></li>
-          <li><a className="headerComponent" href="http://localhost:1234/menu">Menu</a></li>
-          <li><a className="headerComponent" href="http://localhost:1234/about">About Us</a></li>
-          <li><a className="headerComponent" href="http://localhost:1234/contact">Contact Us</a></li>
+          <li><Link  className="link" to={"/"}>Home</Link></li>
+          <li><Link className="link" to={"/menu"}>Menu</Link></li>
+          <li><Link className="link" to={"/about"}>About Us</Link></li>
+          <li><Link className="link" to={"/contact"}>Contact Us</Link></li>
         </ul>
       </div>
       <div className="cta">

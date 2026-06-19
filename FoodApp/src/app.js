@@ -9,6 +9,7 @@ import ErrorComponent from "./Components/ErrorComponent";
 import Body from "./Components/Body";
 import { useState } from "react";
 import Home from "./Components/Home";
+import ResturantMenu from "./Components/ResturantMenu";
 import { createBrowserRouter, RouterProvider, Outlet } from "react-router-dom";
 
 const AppLayout = () => {
@@ -34,7 +35,7 @@ const appRouter = createBrowserRouter([
       },
       {
         path: "/about",
-        element: <AboutUs />,
+        element: <AboutUs />
       },
       {
         path: "/contact",
@@ -44,6 +45,10 @@ const appRouter = createBrowserRouter([
         path: "/menu",
         element: <Menu />,
       },
+      {
+        path : "/restaurant/:resID",
+        element : <ResturantMenu />,
+      }
     ],
     errorElement: <ErrorComponent />,
   },

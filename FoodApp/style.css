@@ -20,14 +20,13 @@ body {
   justify-content: space-between;
   align-items: center;
 }
-.logo{
+.logo {
   width: 235px;
   display: flex;
   justify-content: start;
 }
 
-.logo 
-img {
+.logo img {
   height: 68px;
   width: 68px;
   background-position: center;
@@ -45,7 +44,6 @@ img {
   font-size: 16px;
   font-family: Arial, Helvetica, sans-serif;
   border-bottom: 1px solid none;
-
 }
 
 .cta ul {
@@ -65,8 +63,14 @@ img {
 
 .navItems li:hover {
   height: 20px;
-  border-bottom: 1px solid white;
   cursor: pointer;
+}
+
+.link {
+  text-decoration: none;
+  color: white;
+  font-size: 16px;
+  font-weight: 300;
 }
 
 .signUp {
@@ -87,7 +91,6 @@ img {
   background-color: rgb(255, 255, 255);
   color: rgb(0, 0, 0);
   cursor: pointer;
-  
 }
 
 .cart {
@@ -143,9 +146,6 @@ img {
   gap: 24px;
 }
 
-
-
-
 .searchItems {
   width: 100%;
   height: 60px;
@@ -155,7 +155,6 @@ img {
   font-size: 20px;
   font-weight: 300;
 }
-
 
 .searchItems:active {
   border: none;
@@ -170,9 +169,9 @@ img {
   border: none;
 }
 
-.submit:hover{
+.submit:hover {
   background-color: #cf4200;
-  cursor:pointer;
+  cursor: pointer;
 }
 
 .mainBody {
@@ -212,16 +211,14 @@ img {
   align-items: center;
 }
 
-
 .menuOption ul li:hover {
   color: rgb(255, 82, 0);
   border-bottom: 1px solid rgb(255, 82, 0);
   cursor: pointer;
-    font-size: 18px;
-
+  font-size: 18px;
 }
 
-.menuOption ul li{
+.menuOption ul li {
   color: rgb(0, 0, 0);
   border-bottom: 1px solid none;
   cursor: pointer;
@@ -396,103 +393,118 @@ img {
   font-size: 16px;
 }
 
-.heading{
+.heading {
   color: black;
 }
 
-.addItemsPopUp{
-    color: black;
+.addItemsPopUp {
+  color: black;
 
-    width: 800px;
-    background-color: rgba(230, 230, 230, 0.75);
+  width: 800px;
+  background-color: rgba(230, 230, 230, 0.75);
 
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    align-items: center;
-
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
 }
 
-.selectQuantity{
-    width: 90%;
-    height: 64px;
-    padding: 24px 24px;
+.selectQuantity {
+  width: 90%;
+  height: 64px;
+  padding: 24px 24px;
 
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 
-    background-color: white;
-    border-radius: 16px;
+  background-color: white;
+  border-radius: 16px;
 
-    font-size: 18px;
-
+  font-size: 18px;
 }
 
-.addItemPopUpFooter{
-    width: 100%;
-    height: 64px;
-    background-color: white;
-    display: flex;
-    justify-content: space-between;
-    padding: 12px 24px;
+.addItemPopUpFooter {
+  width: 100%;
+  height: 64px;
+  background-color: white;
+  display: flex;
+  justify-content: space-between;
+  padding: 12px 24px;
 }
 
-.addItems{
-    padding: 12px 36px;
-    background-color: #ff5200;
-    color: white;
+.addItems {
+  padding: 12px 36px;
+  background-color: #ff5200;
+  color: white;
 
-    font-size: 16px;
-    border: none;
+  font-size: 16px;
+  border: none;
 
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 
-    border-radius: 6px;
-
+  border-radius: 6px;
 }
 
-.popUpHeader{
-    width: 100%;
-    display: flex;
-    justify-content: start;
-    align-items: center;
-    gap: 16px;
-    padding: 24px;
-
+.popUpHeader {
+  width: 100%;
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  gap: 16px;
+  padding: 24px;
 }
 
-.addItemsPopUp  hr{
-    margin-top: 16px ;
+.addItemsPopUp hr {
+  margin-top: 16px;
 }
 
-
-.quantity{
-    width: 90%;
-    gap: 24px;
-    height: fit-content;
-    background-color: #ff5200;
+.quantity {
+  width: 90%;
+  gap: 24px;
+  height: fit-content;
+  background-color: #ff5200;
 }
 
-.addItemsPopUp h3{
-    width: 90%;
+.addItemsPopUp h3 {
+  width: 90%;
 }
 
-
-
-.topbody{
-    width: 100%;
-    
+.topbody {
+  width: 100%;
 }
 
-input:focus{
+input:focus {
   outline: none;
 }
 
-.headerComponent{
+.headerComponent {
   text-decoration: none;
   color: white;
+}
+
+.classContact {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  padding: 24px;
+  gap: 24px;
+  height: fit-content;
+  border: 1px solid black;
+}
+
+
+.teamsContact{
+
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  
+  padding: 24px;
+  gap: 24px;
+  height: fit-content;
+  border: 1px solid black;
 
 }

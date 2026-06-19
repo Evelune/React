@@ -3,6 +3,7 @@ import Card from "./Card";
 // import reslist from "../utils/reslist";
 import ShimmerUI from "./ShimmerUI";
 import CounterButton from "./CounterButton";
+import { Link } from "react-router-dom";
 
 // let listOfRestaurants = reslist.data.cards.find(
 //   (c) => c?.card?.card?.id === "restaurant_grid_listing_v2",
@@ -13,10 +14,6 @@ import CounterButton from "./CounterButton";
 const Body = ({ searchText }) => {
   const [items, setItems] = useState([]);
 
-  const filteredRestaurants = items.filter((restaurant) =>
-    restaurant.info.name.toLowerCase().includes(searchText.toLowerCase()),
-  );
-
   console.log("Body Rerendered");
 
   useEffect(() => {
@@ -25,8 +22,9 @@ const Body = ({ searchText }) => {
 
   const fetchData = async () => {
     const data = await fetch(
-      "https://www.swiggy.com/dapi/restaurants/list/v5?lat=12.9351929&lng=77.62448069999999&page_type=DESKTOP_WEB_LISTING",
+      "https://www.swiggy.com/dapi/restaurants/list/v5?lat=27.58430&lng=77.69380&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING",
     );
+
     const json = await data.json();
     console.log(json);
     setItems(
@@ -36,17 +34,17 @@ const Body = ({ searchText }) => {
     );
   };
 
-  // conditional Redering
-  // if(items.length === 0){
-  //   console.log(("loading Items"));
-  //   return <ShimmerUI />
-  // }
+  const filteredRestaurants = (items ?? []).filter((restaurant) =>
+    restaurant.info.name.toLowerCase().includes(searchText.toLowerCase()),
+  );
 
   const isSearching = searchText.length > 0;
 
-  const displayList = isSearching ? filteredRestaurants.length : items.length;
+  const displayList = isSearching
+    ? filteredRestaurants.length
+    : (items ?? []).length;
 
-  return items.length === 0 ? (
+  return !items || items.length === 0 ? (
     <ShimmerUI />
   ) : (
     <div className="mainBody">
@@ -76,7 +74,13 @@ const Body = ({ searchText }) => {
       </div>
       <div className="foodCardContainer">
         {filteredRestaurants.map((restaurant) => (
-          <Card key={restaurant.info.id} cardData={restaurant.info} />
+          <Link
+            className="link"
+            key={restaurant.info.id}
+            to={"/restaurant/" + restaurant.info.id}
+          >
+            <Card cardData={restaurant.info} />
+          </Link>
         ))}
       </div>
     </div>
