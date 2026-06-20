@@ -4,6 +4,7 @@ import Card from "./Card";
 import ShimmerUI from "./ShimmerUI";
 import CounterButton from "./CounterButton";
 import { Link } from "react-router-dom";
+import OnlineStatus from "../utils/OnlineStatus"
 
 // let listOfRestaurants = reslist.data.cards.find(
 //   (c) => c?.card?.card?.id === "restaurant_grid_listing_v2",
@@ -43,6 +44,11 @@ const Body = ({ searchText }) => {
   const displayList = isSearching
     ? filteredRestaurants.length
     : (items ?? []).length;
+
+  const status = OnlineStatus()
+  if(status == false){
+    return <h1>Your are offline please check your internet Connection</h1>
+  }
 
   return !items || items.length === 0 ? (
     <ShimmerUI />

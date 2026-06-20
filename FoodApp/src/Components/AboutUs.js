@@ -5,8 +5,10 @@ import TeamsContact from "./TeamsContact";
 const AboutUs = () => {
   return (
     <>
+
       <h1>This Is About Us Page </h1>
       <ClassContact />
+      
     </>
   );
 };

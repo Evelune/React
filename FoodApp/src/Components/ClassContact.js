@@ -4,7 +4,7 @@ import React from "react";
 //React Component  is bsically a class whcih is give by react and classcontact inherit some property from react.component
 class ClassContact extends React.Component {
 
-    
+
     constructor(props){
         super(props);
 
@@ -35,6 +35,11 @@ class ClassContact extends React.Component {
 
     componentDidUpdate(){
         console.log("ComponentDidUpdate Called");
+    }
+
+    componentWillUnmount(){
+        console.log("Component Will Unmount");
+        
     }
 
 

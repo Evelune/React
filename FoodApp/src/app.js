@@ -11,6 +11,10 @@ import { useState } from "react";
 import Home from "./Components/Home";
 import ResturantMenu from "./Components/ResturantMenu";
 import { createBrowserRouter, RouterProvider, Outlet } from "react-router-dom";
+import { lazy, Suspense } from "react";
+import ShimmerUI from "./Components/ShimmerUI";
+
+const Grocery = lazy(() => import("./Components/Grocery"));
 
 const AppLayout = () => {
   const [searchText, setSearchText] = useState("");
@@ -23,7 +27,6 @@ const AppLayout = () => {
   );
 };
 
-
 const appRouter = createBrowserRouter([
   {
     path: "/",
@@ -31,11 +34,11 @@ const appRouter = createBrowserRouter([
     children: [
       {
         path: "/",
-        element: <Home />
+        element: <Home />,
       },
       {
         path: "/about",
-        element: <AboutUs />
+        element: <AboutUs />,
       },
       {
         path: "/contact",
@@ -46,9 +49,17 @@ const appRouter = createBrowserRouter([
         element: <Menu />,
       },
       {
-        path : "/restaurant/:resID",
-        element : <ResturantMenu />,
-      }
+        path: "/restaurant/:resID",
+        element: <ResturantMenu />,
+      },
+      {
+        path: "/grocery",
+        element: (
+          <Suspense fallback={<ShimmerUI />}>
+            <Grocery />
+          </Suspense>
+        ),
+      },
     ],
     errorElement: <ErrorComponent />,
   },
