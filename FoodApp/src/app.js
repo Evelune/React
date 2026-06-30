@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import ReactDom from "react-dom/client";
 import HeaderComponent from "./Components/HeaderComponent";
 import Banner from "./Components/Banner";
@@ -11,21 +11,46 @@ import { useState } from "react";
 import Home from "./Components/Home";
 import ResturantMenu from "./Components/ResturantMenu";
 import { createBrowserRouter, RouterProvider, Outlet } from "react-router-dom";
-import { lazy, Suspense } from "react";
+import { lazy ,Suspense } from "react";
 import ShimmerUI from "./Components/ShimmerUI";
+import { SWIGGY_URL } from "./utils/Constants";
+import userContext from "./utils/userContext";
+import appStore from "./utils/appStore";
+import {Provider} from "react-redux"
+import Cart from "./Components/Cart";
 
-const Grocery = lazy(() => import("./Components/Grocery"));
+
+
+const Grocery = lazy(()=>import("./Components/Grocery"));
 
 const AppLayout = () => {
+
+  const [ userName , setUserName] = useState()
   const [searchText, setSearchText] = useState("");
 
+  useEffect(()=>{
+    const data= {
+      name : "JD",
+    };
+
+    setUserName(data.name)
+
+  },[])
+
+
   return (
+    <Provider store={appStore}>
+    <userContext.Provider value ={{loggedIn_User : userName , setUserName} }>
     <div className="app">
       <HeaderComponent />
       <Outlet />
     </div>
+    </userContext.Provider>
+    </Provider>
   );
+
 };
+
 
 const appRouter = createBrowserRouter([
   {
@@ -34,11 +59,11 @@ const appRouter = createBrowserRouter([
     children: [
       {
         path: "/",
-        element: <Home />,
+        element: <Home />
       },
       {
         path: "/about",
-        element: <AboutUs />,
+        element: <AboutUs />
       },
       {
         path: "/contact",
@@ -49,17 +74,19 @@ const appRouter = createBrowserRouter([
         element: <Menu />,
       },
       {
-        path: "/restaurant/:resID",
-        element: <ResturantMenu />,
+        path : "/restaurant/:resID",
+        element : <ResturantMenu />,
       },
       {
-        path: "/grocery",
-        element: (
-          <Suspense fallback={<ShimmerUI />}>
-            <Grocery />
-          </Suspense>
-        ),
+        path:"/grocery",
+        element : (
+          <Suspense fallback = {<ShimmerUI/>}><Grocery /></Suspense>
+        )
       },
+      {
+        path : "/cart",
+        element : <Cart />
+      }
     ],
     errorElement: <ErrorComponent />,
   },

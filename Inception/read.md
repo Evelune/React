@@ -1,2 +1,2 @@
-## Leaning React
+## Leaning Vite + React + Redux
 
